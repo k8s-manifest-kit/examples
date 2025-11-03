@@ -1,0 +1,130 @@
+package main
+
+import (
+	"context"
+	"fmt"
+	"log"
+
+	appsv1 "k8s.io/api/apps/v1"
+	corev1 "k8s.io/api/core/v1"
+
+	engine "github.com/k8s-manifest-kit/engine/pkg"
+	"github.com/k8s-manifest-kit/engine/pkg/filter"
+	"github.com/k8s-manifest-kit/engine/pkg/filter/meta/gvk"
+	"github.com/k8s-manifest-kit/engine/pkg/filter/meta/namespace"
+	"github.com/k8s-manifest-kit/engine/pkg/transformer"
+	"github.com/k8s-manifest-kit/engine/pkg/transformer/meta/annotations"
+	labelstrans "github.com/k8s-manifest-kit/engine/pkg/transformer/meta/labels"
+	nametrans "github.com/k8s-manifest-kit/engine/pkg/transformer/meta/name"
+	"github.com/k8s-manifest-kit/examples/internal/logger"
+	helm "github.com/k8s-manifest-kit/renderer-helm/pkg"
+)
+
+func main() {
+	ctx := logger.WithLogger(context.Background(), &logger.StdoutLogger{})
+	if err := Run(ctx); err != nil {
+		log.Fatalf("Error: %v", err)
+	}
+}
+
+func Run(ctx context.Context) error {
+	l := logger.FromContext(ctx)
+	l.Log("=== Multi-Environment Deployment Pipeline Example ===")
+	l.Log("Demonstrates: Combined filtering and environment-specific transformations")
+	l.Log()
+
+	helmRenderer, err := helm.New([]helm.Source{
+		{
+			Chart:       "oci://registry-1.docker.io/bitnamicharts/nginx",
+			ReleaseName: "myapp",
+			Values: helm.Values(map[string]any{
+				"replicaCount": 3,
+			}),
+		},
+	})
+	if err != nil {
+		return fmt.Errorf("failed to create helm renderer: %w", err)
+	}
+
+	// Filter: Exclude system namespaces, keep only Deployments and Services
+	f := filter.And(
+		filter.Not(
+			namespace.Filter("kube-system", "kube-public", "kube-node-lease"),
+		),
+		filter.Or(
+			gvk.Filter(appsv1.SchemeGroupVersion.WithKind("Deployment")),
+			gvk.Filter(corev1.SchemeGroupVersion.WithKind("Service")),
+		),
+	)
+
+	// Transform: Apply environment-specific labels, annotations, and name prefixes
+	t := transformer.Switch(
+		[]transformer.Case{
+			{
+				When: namespace.Filter("production"),
+				Then: transformer.Chain(
+					labelstrans.Set(map[string]string{
+						"env":        "prod",
+						"monitoring": "enabled",
+						"backup":     "enabled",
+					}),
+					annotations.Set(map[string]string{
+						"alert-severity": "critical",
+						"sla":            "99.99",
+					}),
+					nametrans.SetPrefix("prod-"),
+				),
+			},
+			{
+				When: namespace.Filter("staging"),
+				Then: transformer.Chain(
+					labelstrans.Set(map[string]string{
+						"env":        "staging",
+						"monitoring": "enabled",
+					}),
+					nametrans.SetPrefix("stg-"),
+				),
+			},
+		},
+		// Default for dev environments
+		transformer.Chain(
+			labelstrans.Set(map[string]string{"env": "dev"}),
+			nametrans.SetPrefix("dev-"),
+		),
+	)
+
+	e, err := engine.New(
+		engine.WithRenderer(helmRenderer),
+		engine.WithFilter(f),
+		engine.WithTransformer(t),
+	)
+	if err != nil {
+		return fmt.Errorf("failed to create engine: %w", err)
+	}
+
+	objects, err := e.Render(ctx)
+	if err != nil {
+		return fmt.Errorf("failed to render: %w", err)
+	}
+
+	l.Logf("Rendered %d objects (Deployments and Services, excluding system namespaces)\n", len(objects))
+	l.Log("\nEnvironment-specific transformations applied:")
+	l.Log("  Production: critical labels + SLA annotations + 'prod-' prefix")
+	l.Log("  Staging: monitoring labels + 'stg-' prefix")
+	l.Log("  Dev: basic labels + 'dev-' prefix")
+
+	// Show examples of rendered objects
+	for i, obj := range objects {
+		if i >= 3 {
+			break
+		}
+		l.Logf("\n%d. %s/%s\n", i+1, obj.GetKind(), obj.GetName())
+		l.Logf("   Namespace: %s\n", obj.GetNamespace())
+		l.Logf("   Labels: %v\n", obj.GetLabels())
+		if len(obj.GetAnnotations()) > 0 {
+			l.Logf("   Annotations: %v\n", obj.GetAnnotations())
+		}
+	}
+
+	return nil
+}
