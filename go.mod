@@ -137,11 +137,3 @@ require (
 	sigs.k8s.io/structured-merge-diff/v6 v6.3.0 // indirect
 	sigs.k8s.io/yaml v1.6.0 // indirect
 )
-
-replace (
-	github.com/k8s-manifest-kit/engine => ../engine
-	github.com/k8s-manifest-kit/pkg => ../pkg
-	github.com/k8s-manifest-kit/renderer-helm => ../renderer-helm
-	github.com/k8s-manifest-kit/renderer-kustomize => ../renderer-kustomize
-	github.com/k8s-manifest-kit/renderer-yaml => ../renderer-yaml
-)
