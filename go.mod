@@ -8,7 +8,7 @@ require (
 	github.com/k8s-manifest-kit/renderer-helm v0.1.0
 	github.com/k8s-manifest-kit/renderer-yaml v0.1.0
 	github.com/rs/xid v1.6.0
-	k8s.io/api v0.34.1
+	k8s.io/api v0.34.2
 )
 
 require (
@@ -120,7 +120,7 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	helm.sh/helm/v3 v3.19.2 // indirect
 	k8s.io/apiextensions-apiserver v0.34.0 // indirect
-	k8s.io/apimachinery v0.34.1 // indirect
+	k8s.io/apimachinery v0.34.2 // indirect
 	k8s.io/apiserver v0.34.0 // indirect
 	k8s.io/cli-runtime v0.34.0 // indirect
 	k8s.io/client-go v0.34.0 // indirect
