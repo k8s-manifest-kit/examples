@@ -181,8 +181,8 @@ github.com/k8s-manifest-kit/engine v0.1.0 h1:7pLYomlau135bO3AME3hWhCufWvlJDzmPTh
 github.com/k8s-manifest-kit/engine v0.1.0/go.mod h1:4mxBoLvlm4NGb1HL6pxY/aKg5PxABDdXhG0Y8/NbRTo=
 github.com/k8s-manifest-kit/pkg v0.1.0 h1:jVKYbnzEXwKgmHw/oOyWqdc/PaWQY/UwQgiy/eBm66g=
 github.com/k8s-manifest-kit/pkg v0.1.0/go.mod h1:qQKbAP3RuWJBY8BqrHnXJHlMR4tc2v+nPQjsu2J0agU=
-github.com/k8s-manifest-kit/renderer-helm v0.1.0 h1:Bz+bg0NDPFoXU4evNL8AcNoqpDtTTrqDdiimF5gcSFw=
-github.com/k8s-manifest-kit/renderer-helm v0.1.0/go.mod h1:DqEjFkrAYvHDPc6Tk3fCjXGorTuQovc37xGjWIC8wuQ=
+github.com/k8s-manifest-kit/renderer-helm v0.2.0 h1:/2bY/ELOt3TvQ0RBsZS6Ss8kIljh/Au93DvotBOanwk=
+github.com/k8s-manifest-kit/renderer-helm v0.2.0/go.mod h1:Wqa8iycf8eQ5JvQI8tXXd32MR+NPDFtrNj3YGW4mlRg=
 github.com/k8s-manifest-kit/renderer-yaml v0.1.0 h1:KqUY/GIFcLfDc5WyDJKeEmLJ8++1f76DGolN+pZUCA4=
 github.com/k8s-manifest-kit/renderer-yaml v0.1.0/go.mod h1:ng7BEAtdp67A9fiOb4O9i68/SL6SFIctmxx7Q507oTM=
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
