@@ -4,7 +4,7 @@ go 1.25.7
 
 require (
 	github.com/k8s-manifest-kit/engine v0.2.1-0.20260228164016-c1dc25076aaf
-	github.com/k8s-manifest-kit/pkg v0.2.1-0.20260228162930-b24074ba9a2b
+	github.com/k8s-manifest-kit/pkg v0.2.1-0.20260228165511-fcbee2e88a23
 	github.com/k8s-manifest-kit/renderer-helm v0.3.1-0.20260228164058-cd14df0d9fe9
 	github.com/k8s-manifest-kit/renderer-yaml v0.1.1-0.20260228164058-c65a823e2d1a
 	github.com/rs/xid v1.6.0

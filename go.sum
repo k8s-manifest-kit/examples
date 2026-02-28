@@ -180,8 +180,8 @@ github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnr
 github.com/json-iterator/go v1.1.12/go.mod h1:e30LSqwooZae/UwlEbR2852Gd8hjQvJoHmT4TnhNGBo=
 github.com/k8s-manifest-kit/engine v0.2.1-0.20260228164016-c1dc25076aaf h1:BFdbHvKe+dC6hP2sTGb7Hs7YpJTYfxHkO7pFpaD8PRA=
 github.com/k8s-manifest-kit/engine v0.2.1-0.20260228164016-c1dc25076aaf/go.mod h1:EOhtGTA5bkZMzYmuJOYXb88Q07Hsms9yHuiQI2N/3Fs=
-github.com/k8s-manifest-kit/pkg v0.2.1-0.20260228162930-b24074ba9a2b h1:EecOMi/cp20JvZHVC+/7VpGZ0wDwhf6v0HET3r/tVac=
-github.com/k8s-manifest-kit/pkg v0.2.1-0.20260228162930-b24074ba9a2b/go.mod h1:1t3uxa3giBzrCQXR/5fR1SG436JNg5t1UVRss+eiBTw=
+github.com/k8s-manifest-kit/pkg v0.2.1-0.20260228165511-fcbee2e88a23 h1:fc5TeNbYtRtvo66Zo7h8FUpAxBovb4j/sZKFRyV4aVM=
+github.com/k8s-manifest-kit/pkg v0.2.1-0.20260228165511-fcbee2e88a23/go.mod h1:1t3uxa3giBzrCQXR/5fR1SG436JNg5t1UVRss+eiBTw=
 github.com/k8s-manifest-kit/renderer-helm v0.3.1-0.20260228164058-cd14df0d9fe9 h1:YUyQluKzUz/IyOqeAEpQgdJSbNsoqvMoYkXxmH4uAtk=
 github.com/k8s-manifest-kit/renderer-helm v0.3.1-0.20260228164058-cd14df0d9fe9/go.mod h1:X6jVXJwblq0KsMfbFAiHe1Z/b5AaGax1Pe/wx99FceY=
 github.com/k8s-manifest-kit/renderer-yaml v0.1.1-0.20260228164058-c65a823e2d1a h1:8tbC6lWRQr8fHO9M/7O4VHsiehmjpW5enrIk9zPA/RE=
