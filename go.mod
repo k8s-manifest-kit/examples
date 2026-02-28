@@ -4,7 +4,7 @@ go 1.25.7
 
 require (
 	github.com/k8s-manifest-kit/engine v0.1.0
-	github.com/k8s-manifest-kit/pkg v0.1.0
+	github.com/k8s-manifest-kit/pkg v0.2.0
 	github.com/k8s-manifest-kit/renderer-helm v0.2.0
 	github.com/k8s-manifest-kit/renderer-yaml v0.1.0
 	github.com/rs/xid v1.6.0
@@ -58,6 +58,7 @@ require (
 	github.com/google/btree v1.1.3 // indirect
 	github.com/google/gnostic-models v0.7.1 // indirect
 	github.com/google/go-cmp v0.7.0 // indirect
+	github.com/google/pprof v0.0.0-20260115054156-294ebfa9ad83 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/gosuri/uitable v0.0.4 // indirect
 	github.com/gregjones/httpcache v0.0.0-20190611155906-901d90724c79 // indirect
@@ -87,7 +88,6 @@ require (
 	github.com/monochromegane/go-gitignore v0.0.0-20200626010858-205db1a8cc00 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/onsi/ginkgo/v2 v2.28.0 // indirect
-	github.com/onsi/gomega v1.39.1 // indirect
 	github.com/opencontainers/go-digest v1.0.0 // indirect
 	github.com/opencontainers/image-spec v1.1.1 // indirect
 	github.com/peterbourgon/diskv v2.0.1+incompatible // indirect
