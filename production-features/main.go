@@ -30,7 +30,7 @@ func main() {
 func Run(ctx context.Context) error {
 	l := logger.FromContext(ctx)
 	l.Log("=== Production Features ===")
-	l.Log("Demonstrates: Caching, Parallel Rendering, Metrics, and Source Annotations")
+	l.Log("Demonstrates: Caching, Metrics, and Source Annotations")
 	l.Log("")
 
 	// Feature 1: Caching - Improve performance with TTL-based caching
@@ -75,15 +75,12 @@ func Run(ctx context.Context) error {
 		RendererMetric: rendererMetric,
 	})
 
-	// Feature 2: Parallel Rendering - Process multiple renderers concurrently
-	l.Log("3. Parallel Rendering: Process multiple sources concurrently")
-	l.Log("4. Source Annotations: Track which file/chart produced each object")
+	l.Log("3. Source Annotations: Track which file/chart produced each object")
 	l.Log("")
 
 	e, err := engine.New(
 		engine.WithRenderer(helmRenderer),
 		engine.WithRenderer(yamlRenderer),
-		engine.WithParallel(true), // Feature 2: Enable parallel rendering
 	)
 	if err != nil {
 		return fmt.Errorf("failed to create engine: %w", err)
@@ -152,7 +149,6 @@ func Run(ctx context.Context) error {
 	l.Log("")
 	l.Log("=== Summary ===")
 	l.Log("✓ Caching: Helm results cached for 5 minutes")
-	l.Log("✓ Parallel: Helm and YAML renderers run concurrently")
 	l.Log("✓ Metrics: Performance data collected for observability")
 	l.Log("✓ Source Tracking: Each object annotated with its origin")
 
