@@ -3,12 +3,13 @@ module github.com/k8s-manifest-kit/examples
 go 1.25.7
 
 require (
-	github.com/k8s-manifest-kit/engine v0.2.0
-	github.com/k8s-manifest-kit/pkg v0.2.0
-	github.com/k8s-manifest-kit/renderer-helm v0.3.0
-	github.com/k8s-manifest-kit/renderer-yaml v0.1.0
+	github.com/k8s-manifest-kit/engine v0.2.1-0.20260228164016-c1dc25076aaf
+	github.com/k8s-manifest-kit/pkg v0.2.1-0.20260228162930-b24074ba9a2b
+	github.com/k8s-manifest-kit/renderer-helm v0.3.1-0.20260228164058-cd14df0d9fe9
+	github.com/k8s-manifest-kit/renderer-yaml v0.1.1-0.20260228164058-c65a823e2d1a
 	github.com/rs/xid v1.6.0
 	k8s.io/api v0.35.1
+	k8s.io/apimachinery v0.35.1
 )
 
 require (
@@ -89,8 +90,6 @@ require (
 	github.com/opencontainers/image-spec v1.1.1 // indirect
 	github.com/peterbourgon/diskv v2.0.1+incompatible // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
-	github.com/prometheus/common v0.67.5 // indirect
-	github.com/prometheus/procfs v0.19.2 // indirect
 	github.com/rubenv/sql-migrate v1.8.1 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/santhosh-tekuri/jsonschema/v6 v6.0.2 // indirect
@@ -119,7 +118,6 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	helm.sh/helm/v4 v4.1.1 // indirect
 	k8s.io/apiextensions-apiserver v0.35.1 // indirect
-	k8s.io/apimachinery v0.35.1 // indirect
 	k8s.io/apiserver v0.35.1 // indirect
 	k8s.io/cli-runtime v0.35.0 // indirect
 	k8s.io/client-go v0.35.1 // indirect
