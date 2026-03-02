@@ -3,10 +3,10 @@ module github.com/k8s-manifest-kit/examples
 go 1.25.7
 
 require (
-	github.com/k8s-manifest-kit/engine v0.2.1-0.20260302081044-bbc1e11e1957
-	github.com/k8s-manifest-kit/pkg v0.2.1-0.20260302085906-6946a2e8e1d5
-	github.com/k8s-manifest-kit/renderer-helm v0.3.1-0.20260228165627-45edb7341e8c
-	github.com/k8s-manifest-kit/renderer-yaml v0.1.1-0.20260302090035-f8ff6a85dff6
+	github.com/k8s-manifest-kit/engine v0.2.1-0.20260302092700-39c16f95d249
+	github.com/k8s-manifest-kit/pkg v0.2.1-0.20260302092700-cc39712d9e4c
+	github.com/k8s-manifest-kit/renderer-helm v0.3.1-0.20260302092704-43832966e1ae
+	github.com/k8s-manifest-kit/renderer-yaml v0.1.1-0.20260302092707-ac52e8834f7d
 	github.com/rs/xid v1.6.0
 	k8s.io/api v0.35.2
 	k8s.io/apimachinery v0.35.2
@@ -98,8 +98,6 @@ require (
 	github.com/tetratelabs/wazero v1.11.0 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
 	github.com/xlab/treeprint v1.2.0 // indirect
-	go.opentelemetry.io/otel/sdk v1.37.0 // indirect
-	go.opentelemetry.io/otel/sdk/metric v1.37.0 // indirect
 	go.opentelemetry.io/proto/otlp v1.9.0 // indirect
 	go.yaml.in/yaml/v2 v2.4.3 // indirect
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
