@@ -11,7 +11,6 @@ import (
 	engine "github.com/k8s-manifest-kit/engine/pkg"
 	"github.com/k8s-manifest-kit/engine/pkg/postrenderer"
 	"github.com/k8s-manifest-kit/engine/pkg/render"
-	"github.com/k8s-manifest-kit/engine/pkg/source"
 	"github.com/k8s-manifest-kit/engine/pkg/transformer/meta/labels"
 	"github.com/k8s-manifest-kit/engine/pkg/types"
 	"github.com/k8s-manifest-kit/examples/internal/logger"
@@ -32,22 +31,18 @@ func Run(ctx context.Context) error {
 	l.Log()
 
 	// SourceSelector: skip internal-only charts in production.
-	// source.Selector[helm.Source] provides type-safe access to Helm-specific fields;
-	// non-Helm sources are automatically passed through.
 	env := os.Getenv("DEPLOY_ENV")
 	if env == "" {
 		env = "staging"
 	}
 
-	chartSelector := source.Selector[helm.Source](
-		func(_ context.Context, s helm.Source) (bool, error) {
-			if env == "production" && s.ReleaseName == "internal-tools" {
-				return false, nil
-			}
+	chartSelector := func(_ context.Context, s helm.Source) (bool, error) {
+		if env == "production" && s.ReleaseName == "internal-tools" {
+			return false, nil
+		}
 
-			return true, nil
-		},
-	)
+		return true, nil
+	}
 
 	// Source-level PostRenderer: add per-chart metadata
 	addChartOriginLabel := func(
@@ -124,7 +119,7 @@ func Run(ctx context.Context) error {
 	l.Logf("\nRendered %d objects (DEPLOY_ENV=%s)\n\n", len(objects), env)
 
 	l.Log("Pipeline hooks exercised:")
-	l.Log("  1. source.Selector[helm.Source] — skips 'internal-tools' when DEPLOY_ENV=production")
+	l.Log("  1. helm.SourceSelector           — skips 'internal-tools' when DEPLOY_ENV=production")
 	l.Log("  2. Source.PostRenderers          — adds 'source-hook=true' label per chart")
 	l.Log("  3. helm.WithPostRenderer         — renderer-level batch logging")
 	l.Log("  4. engine.WithTransformer        — global label injection")
