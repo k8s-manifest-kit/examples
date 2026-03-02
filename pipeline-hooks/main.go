@@ -14,6 +14,7 @@ import (
 	"github.com/k8s-manifest-kit/engine/pkg/transformer/meta/labels"
 	"github.com/k8s-manifest-kit/engine/pkg/types"
 	"github.com/k8s-manifest-kit/examples/internal/logger"
+	"github.com/k8s-manifest-kit/pkg/util/k8s"
 	helm "github.com/k8s-manifest-kit/renderer-helm/pkg"
 )
 
@@ -49,13 +50,9 @@ func Run(ctx context.Context) error {
 		_ context.Context, objects []unstructured.Unstructured,
 	) ([]unstructured.Unstructured, error) {
 		for i := range objects {
-			lbls := objects[i].GetLabels()
-			if lbls == nil {
-				lbls = make(map[string]string)
-			}
-
-			lbls["pipeline-hooks-example/source-hook"] = "true"
-			objects[i].SetLabels(lbls)
+			k8s.SetLabels(&objects[i], map[string]string{
+				"pipeline-hooks-example/source-hook": "true",
+			})
 		}
 
 		return objects, nil
