@@ -6,10 +6,13 @@ import (
 	"time"
 
 	"github.com/k8s-manifest-kit/examples/internal/logger"
+	"github.com/k8s-manifest-kit/examples/internal/testenv"
 	example "github.com/k8s-manifest-kit/examples/pipeline-hooks"
 )
 
 func TestRun(t *testing.T) {
+	testenv.IsolateHelmEnv(t)
+
 	ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
 	defer cancel()
 

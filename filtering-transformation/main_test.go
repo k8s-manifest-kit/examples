@@ -7,9 +7,12 @@ import (
 
 	example "github.com/k8s-manifest-kit/examples/filtering-transformation"
 	"github.com/k8s-manifest-kit/examples/internal/logger"
+	"github.com/k8s-manifest-kit/examples/internal/testenv"
 )
 
 func TestRun(t *testing.T) {
+	testenv.IsolateHelmEnv(t)
+
 	ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
 	defer cancel()
 
