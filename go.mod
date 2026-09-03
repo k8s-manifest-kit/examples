@@ -3,10 +3,10 @@ module github.com/k8s-manifest-kit/examples
 go 1.26.8
 
 require (
-	github.com/k8s-manifest-kit/engine v0.2.1-0.20260903085614-a9bf18406cf5
-	github.com/k8s-manifest-kit/pkg v0.2.1-0.20260903085308-d066891ccc4b
-	github.com/k8s-manifest-kit/renderer-helm v0.4.1-0.20260903093149-b164c7e73c52
-	github.com/k8s-manifest-kit/renderer-yaml v0.1.1-0.20260903093150-f3f2821c0c52
+	github.com/k8s-manifest-kit/engine v0.2.1-0.20260903115827-d00cdfa2b407
+	github.com/k8s-manifest-kit/pkg v0.2.1-0.20260903115606-18f724296cc5
+	github.com/k8s-manifest-kit/renderer-helm v0.4.1-0.20260903120011-540d9576ad1e
+	github.com/k8s-manifest-kit/renderer-yaml v0.1.1-0.20260903120055-8d246f122992
 	github.com/rs/xid v1.6.0
 	k8s.io/api v0.36.4
 	k8s.io/apimachinery v0.36.4
