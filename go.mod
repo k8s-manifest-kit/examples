@@ -1,15 +1,15 @@
 module github.com/k8s-manifest-kit/examples
 
-go 1.26.5
+go 1.26.8
 
 require (
-	github.com/k8s-manifest-kit/engine v0.2.1-0.20260805104925-5d87e2dfa509
-	github.com/k8s-manifest-kit/pkg v0.2.1-0.20260805104432-8c3ee677c65a
-	github.com/k8s-manifest-kit/renderer-helm v0.4.1-0.20260805111431-b00083bf3b33
-	github.com/k8s-manifest-kit/renderer-yaml v0.1.1-0.20260805112106-f753542afb23
+	github.com/k8s-manifest-kit/engine v0.2.1-0.20260903085614-a9bf18406cf5
+	github.com/k8s-manifest-kit/pkg v0.2.1-0.20260903085308-d066891ccc4b
+	github.com/k8s-manifest-kit/renderer-helm v0.4.1-0.20260903093149-b164c7e73c52
+	github.com/k8s-manifest-kit/renderer-yaml v0.1.1-0.20260903093150-f3f2821c0c52
 	github.com/rs/xid v1.6.0
-	k8s.io/api v0.36.3
-	k8s.io/apimachinery v0.36.3
+	k8s.io/api v0.36.4
+	k8s.io/apimachinery v0.36.4
 )
 
 require (
@@ -57,20 +57,20 @@ require (
 	github.com/spf13/cast v1.10.0 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
 	go.yaml.in/yaml/v2 v2.4.4 // indirect
-	go.yaml.in/yaml/v3 v3.0.4 // indirect
-	golang.org/x/crypto v0.54.0 // indirect
-	golang.org/x/net v0.57.0 // indirect
+	go.yaml.in/yaml/v3 v3.0.5 // indirect
+	golang.org/x/crypto v0.55.0 // indirect
+	golang.org/x/net v0.58.0 // indirect
 	golang.org/x/oauth2 v0.36.0 // indirect
 	golang.org/x/sync v0.22.0 // indirect
 	golang.org/x/sys v0.47.0 // indirect
 	golang.org/x/term v0.45.0 // indirect
-	golang.org/x/text v0.40.0 // indirect
+	golang.org/x/text v0.41.0 // indirect
 	golang.org/x/time v0.15.0 // indirect
 	google.golang.org/protobuf v1.36.12-0.20260120151049-f2248ac996af // indirect
 	gopkg.in/evanphx/json-patch.v4 v4.13.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	helm.sh/helm/v4 v4.2.3 // indirect
+	helm.sh/helm/v4 v4.2.4 // indirect
 	k8s.io/apiextensions-apiserver v0.36.1 // indirect
 	k8s.io/client-go v0.36.1 // indirect
 	k8s.io/klog/v2 v2.140.0 // indirect
