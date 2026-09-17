@@ -9,7 +9,7 @@ require (
 	github.com/k8s-manifest-kit/renderer-yaml v0.1.1-0.20260917074019-d268b09fd451
 	github.com/rs/xid v1.6.0
 	k8s.io/api v0.36.4
-	k8s.io/apimachinery v0.36.4
+	k8s.io/apimachinery v0.37.0
 )
 
 require (
