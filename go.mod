@@ -1,15 +1,15 @@
 module github.com/k8s-manifest-kit/examples
 
-go 1.26.8
+go 1.27.2
 
 require (
-	github.com/k8s-manifest-kit/engine v0.2.1-0.20260917073048-fdd303dbeb9c
-	github.com/k8s-manifest-kit/pkg v0.2.1-0.20260917072856-00e00ae8cbdb
-	github.com/k8s-manifest-kit/renderer-helm v0.4.1-0.20260917073527-3e428af97629
-	github.com/k8s-manifest-kit/renderer-yaml v0.1.1-0.20260917074019-d268b09fd451
+	github.com/k8s-manifest-kit/engine v0.2.1-0.20261011171825-7c374a88973b
+	github.com/k8s-manifest-kit/pkg v0.2.1-0.20261011171852-68da66919805
+	github.com/k8s-manifest-kit/renderer-helm v0.4.1-0.20261011172056-8e136da48efd
+	github.com/k8s-manifest-kit/renderer-yaml v0.1.1-0.20261011172150-e8634baa9ce1
 	github.com/rs/xid v1.6.0
-	k8s.io/api v0.36.4
-	k8s.io/apimachinery v0.36.4
+	k8s.io/api v0.37.1
+	k8s.io/apimachinery v0.37.1
 )
 
 require (
@@ -70,9 +70,9 @@ require (
 	gopkg.in/evanphx/json-patch.v4 v4.13.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	helm.sh/helm/v4 v4.3.0-rc.1 // indirect
-	k8s.io/apiextensions-apiserver v0.36.4 // indirect
-	k8s.io/client-go v0.36.4 // indirect
+	helm.sh/helm/v4 v4.3.0 // indirect
+	k8s.io/apiextensions-apiserver v0.37.1 // indirect
+	k8s.io/client-go v0.37.1 // indirect
 	k8s.io/klog/v2 v2.140.0 // indirect
 	k8s.io/kube-openapi v0.0.0-20260721132016-d427ff9ee9ad // indirect
 	k8s.io/utils v0.0.0-20260707023825-cf1189d6abe3 // indirect
