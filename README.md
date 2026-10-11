@@ -13,7 +13,7 @@ renderers and shared pipeline.
 | [`real-world`](real-world) | A larger end-to-end example |
 | [`pipeline-hooks`](pipeline-hooks) | Filters, transformers, and post-renderers |
 
-The examples target Go 1.26.8. Run one with:
+The examples target Go 1.27.2. Run one with:
 
 ```bash
 go run ./quickstart
