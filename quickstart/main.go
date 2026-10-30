@@ -25,8 +25,9 @@ func Run(ctx context.Context) error {
 	// Create an Engine with a single Helm renderer
 	// This is the most basic usage of the library
 	e, err := helm.NewEngine(helm.Source{
-		Chart:       "oci://registry-1.docker.io/bitnamicharts/nginx",
-		ReleaseName: "my-nginx",
+		Chart:          "oci://registry-1.docker.io/bitnamicharts/nginx",
+		ReleaseName:    "my-nginx",
+		ReleaseVersion: "25.2.13",
 		Values: helm.Values(map[string]any{
 			"replicaCount": 2,
 			"service": map[string]any{

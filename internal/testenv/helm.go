@@ -5,8 +5,9 @@ import (
 	"testing"
 )
 
-// IsolateHelmEnv gives each test its own Helm cache and config paths
-// so OCI-backed example runs do not race through shared global state.
+// IsolateHelmEnv gives each integration-tagged example test its own Helm cache
+// and config paths so OCI-backed example runs do not race through shared
+// global state.
 func IsolateHelmEnv(t *testing.T) {
 	t.Helper()
 

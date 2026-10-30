@@ -1,3 +1,9 @@
+//go:build integration
+
+// The Run smoke test renders a live Helm chart from a public OCI registry (the
+// embedded YAML manifests are offline, but the example renders both), so it
+// runs only in the integration suite (make test/integration), never in the
+// offline unit suite (make test).
 package main_test
 
 import (

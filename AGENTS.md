@@ -19,11 +19,23 @@ Run commands from this directory:
 
 ```bash
 make test
+make test/race
+make test/integration
 make fmt
 make lint
+make lint/integration
 make lint/fix
 make check
 ```
 
-Run an individual example with `go run ./<example>`. Keep examples runnable, update the README and this guide when adding one, and keep tests aligned with the behavior demonstrated.
+`make test` and `make test/race` are offline: they compile every package and
+run the unit suite, which currently has no behavioral tests. Each example's
+`Run` smoke test lives in `main_test.go` behind the `integration` build tag
+because it renders live charts from public registries and repositories;
+`make test/integration` runs all six with the race detector and `-count=1`.
+Live Helm sources must pin an exact chart version (`ReleaseVersion`).
+
+Run an individual example with `go run ./<example>`. Keep examples runnable,
+update the README and this guide when adding one, and keep tests aligned with
+the behavior demonstrated.
 

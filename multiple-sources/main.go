@@ -29,8 +29,9 @@ func Run(ctx context.Context) error {
 	// Each chart is processed independently and results are aggregated
 	helmRenderer, err := helm.New([]helm.Source{
 		{
-			Chart:       "oci://registry-1.docker.io/daprio/dapr-shared-chart",
-			ReleaseName: "app-one",
+			Chart:          "oci://registry-1.docker.io/daprio/dapr-shared-chart",
+			ReleaseName:    "app-one",
+			ReleaseVersion: "0.0.16",
 			Values: helm.Values(map[string]any{
 				"shared": map[string]any{
 					"appId": xid.New().String(),
@@ -38,9 +39,10 @@ func Run(ctx context.Context) error {
 			}),
 		},
 		{
-			Repo:        "https://dapr.github.io/helm-charts",
-			Chart:       "dapr",
-			ReleaseName: "app-two",
+			Repo:           "https://dapr.github.io/helm-charts",
+			Chart:          "dapr",
+			ReleaseName:    "app-two",
+			ReleaseVersion: "1.18.9",
 			Values: helm.Values(map[string]any{
 				"shared": map[string]any{
 					"appId": xid.New().String(),

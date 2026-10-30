@@ -44,6 +44,35 @@ fmt:
 test:
 	go test -v ./...
 
+# Offline race pass for the unit suite. The example Run smoke tests are
+# excluded here because they are tagged `integration` and need network access.
+.PHONY: test/race
+test/race:
+	go test -race ./...
+
+# Examples whose Run smoke tests render live charts. Kept in sync with the
+# integration-tagged */main_test.go files.
+INTEGRATION_EXAMPLES := \
+	filtering-transformation \
+	multiple-sources \
+	pipeline-hooks \
+	production-features \
+	quickstart \
+	real-world
+
+# Live integration suite: executes the example Run smoke tests against public
+# chart registries and repositories. Requires network access; no credentials.
+# -count=1 disables result caching so a pass is always a fresh live execution.
+.PHONY: test/integration
+test/integration:
+	@for example in $(INTEGRATION_EXAMPLES); do \
+		go test -tags integration -list '^TestRun$$' "./$$example" | grep -x 'TestRun' > /dev/null || { \
+			echo "TestRun is not selected by the integration build tag in $$example" >&2; \
+			exit 1; \
+		}; \
+	done
+	go test -v -race -count=1 -tags integration ./...
+
 .PHONY: deps
 deps:
 	go mod tidy
@@ -87,6 +116,12 @@ lint:
 .PHONY: lint/fix
 lint/fix:
 	@$(GOLANGCI) run --config .golangci.yml --timeout $(LINT_TIMEOUT) --fix
+
+# Lint the integration build so the tagged example smoke tests are covered by
+# the same pinned linter as the unit build.
+.PHONY: lint/integration
+lint/integration:
+	@$(GOLANGCI) run --config .golangci.yml --timeout $(LINT_TIMEOUT) --build-tags integration
 
 .PHONY: vulncheck
 vulncheck:

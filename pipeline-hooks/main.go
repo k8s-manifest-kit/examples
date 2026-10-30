@@ -61,16 +61,18 @@ func Run(ctx context.Context) error {
 	helmRenderer, err := helm.New(
 		[]helm.Source{
 			{
-				Chart:       "oci://registry-1.docker.io/bitnamicharts/nginx",
-				ReleaseName: "web-frontend",
+				Chart:          "oci://registry-1.docker.io/bitnamicharts/nginx",
+				ReleaseName:    "web-frontend",
+				ReleaseVersion: "25.2.13",
 				Values: helm.Values(map[string]any{
 					"replicaCount": 2,
 				}),
 				PostRenderers: []types.PostRenderer{addChartOriginLabel},
 			},
 			{
-				Chart:       "oci://registry-1.docker.io/bitnamicharts/nginx",
-				ReleaseName: "internal-tools",
+				Chart:          "oci://registry-1.docker.io/bitnamicharts/nginx",
+				ReleaseName:    "internal-tools",
+				ReleaseVersion: "25.2.13",
 				Values: helm.Values(map[string]any{
 					"replicaCount": 1,
 				}),
