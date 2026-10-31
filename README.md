@@ -13,16 +13,21 @@ renderers and shared pipeline.
 | [`real-world`](real-world) | A larger end-to-end example |
 | [`pipeline-hooks`](pipeline-hooks) | Filters, transformers, and post-renderers |
 
-The examples target Go 1.27.3. Run one with:
+The examples build with the Go version required in [`go.mod`](go.mod). Run one
+with:
 
 ```bash
 go run ./quickstart
 go run ./pipeline-hooks
 ```
 
-Run the complete module test suite with `make test`. Formatting, linting, and
-the combined validation command are available through `make fmt`, `make lint`,
-and `make check`.
+`make test` and `make test/race` are offline: they compile every package and
+run the unit suite, which currently contains no behavioral tests. The live
+example smoke tests run only through `make test/integration` (see
+[Testing](#testing) below). Formatting, linting, and the combined validation
+command are available through `make fmt`, `make lint`, and `make check`.
+Contributor and integration guidance lives in
+[`docs/development.md`](docs/development.md).
 
 ## Testing
 

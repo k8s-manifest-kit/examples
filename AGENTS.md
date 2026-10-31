@@ -39,3 +39,6 @@ Run an individual example with `go run ./<example>`. Keep examples runnable,
 update the README and this guide when adding one, and keep tests aligned with
 the behavior demonstrated.
 
+[`docs/development.md`](docs/development.md) is the full contributor guide:
+command semantics, chart pinning rules, and how to add an example.
+
