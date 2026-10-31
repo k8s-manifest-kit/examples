@@ -19,7 +19,7 @@ import (
 func TestRun(t *testing.T) {
 	testenv.IsolateHelmEnv(t)
 
-	ctx, cancel := context.WithTimeout(context.Background(), 90*time.Second)
+	ctx, cancel := context.WithTimeout(t.Context(), 90*time.Second)
 	defer cancel()
 
 	ctx = logger.WithLogger(ctx, t)
