@@ -92,3 +92,26 @@ published `ReleaseVersion` pin:
   the linter configuration is `.golangci.yml`.
 - Keep the offline suites offline: anything that needs network access
   belongs behind the `integration` build tag.
+
+### Multiline strings
+
+- Use one descriptive, standalone, package-level `const name =` declaration
+  with a raw string literal for every multiline string: fixtures, manifests,
+  templates, and expected output.
+- Never embed multiline string literals in function or method bodies, and
+  never declare them as function-local constants.
+- Never group multiline constants in a `const (...)` block. Related
+  single-line scalar constants can still be grouped, and single-line inline
+  strings are unaffected.
+- Keep large literal content separate from execution logic for readability.
+  Preserve meaningful content indentation; the declaration layout must not
+  introduce unintended bytes.
+- A function may format the named template into a local variable. The
+  prohibition concerns where the literal is declared, not where its string
+  value is used.
+
+```go
+const fixtureYAML = `apiVersion: v1
+kind: ConfigMap
+`
+```
