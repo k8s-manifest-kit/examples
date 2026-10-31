@@ -11,7 +11,7 @@ This module contains runnable examples and tests for k8s-manifest-kit. Each exam
 - `production-features`: Helm/YAML rendering with cache, metrics, and source annotations.
 - `real-world`: composed filters and environment-specific transformations.
 
-All examples use split module imports such as `github.com/k8s-manifest-kit/engine/pkg`, `renderer-helm/pkg`, and `pkg/util`. Helm examples require network access to public OCI registries or repositories.
+All examples use split module imports such as `github.com/k8s-manifest-kit/engine/pkg`, `renderer-helm/pkg`, and `pkg/util/cache`. Helm examples require network access to public OCI registries or repositories.
 
 ## Development
 

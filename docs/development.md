@@ -11,6 +11,22 @@ Build with the Go version required by [`go.mod`](../go.mod). Every example is
 a `main` package that exposes `Run(context.Context) error`, so it can be run
 directly with `go run ./<example>` and exercised by a test.
 
+## Package layout
+
+- One directory per example (`quickstart/`, `filtering-transformation/`,
+  `multiple-sources/`, `pipeline-hooks/`, `production-features/`,
+  `real-world/`), each a `main` package with `Run(context.Context) error`
+  and an `integration`-tagged `main_test.go` smoke test.
+- `internal/` — helpers shared across examples (`internal/logger`,
+  `internal/testenv`), not importable outside this module.
+- `docs/` — contributor documentation.
+
+Examples depend on the published module graph pinned in
+[`go.mod`](../go.mod): `github.com/k8s-manifest-kit/pkg`, `engine`,
+`renderer-helm`, and `renderer-yaml`. The layout follows the shared
+[`project-layout.md`](../../docs/project-layout.md) convention (workspace
+navigation).
+
 ## Commands
 
 Run all commands from the module root:
