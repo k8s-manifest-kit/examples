@@ -37,7 +37,9 @@ Live Helm sources must pin an exact chart version (`ReleaseVersion`).
 
 Run an individual example with `go run ./<example>`. Keep examples runnable,
 update the README and this guide when adding one, and keep tests aligned with
-the behavior demonstrated.
+the behavior demonstrated. Keep smoke tests simple: assert that the
+demonstrated behavior works, and don't add test framework machinery or
+re-test renderer internals here.
 
 [`docs/development.md`](docs/development.md) is the full contributor guide:
 command semantics, chart pinning rules, and how to add an example.

@@ -95,6 +95,24 @@ published `ReleaseVersion` pin:
 5. Update the catalog in [`README.md`](../README.md) and the example list in
    [`AGENTS.md`](../AGENTS.md).
 
+## Test simplicity
+
+Use the simplest test that proves the contract under test. An example's
+smoke test exists to prove that the demonstrated behavior works: isolate the
+environment, bound the context, call `Run`, and check the error. Don't
+re-test renderer or engine internals here, don't build a shared example test
+framework, and don't add helpers, mocks, or extra test files unless a
+concrete behavior or regression requires them. Reuse the small existing
+`internal/logger` and `internal/testenv` helpers instead of duplicating
+them, and keep the existing plain `testing` style — Gomega is not required.
+
+Necessary isolation, timeouts, error checks, exact live chart pins, the
+`integration` build tag, and Makefile registration are part of the contract,
+not over-engineering; the coverage-boundary descriptions under
+[Commands](#commands) stay accurate. Offline targets remain compile and vet
+checks — simplicity is not a reason to claim behavioral coverage they don't
+have.
+
 ## Code conventions
 
 - Give each parameter its own type: `name string, namespace string`, not
