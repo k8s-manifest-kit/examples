@@ -81,10 +81,10 @@ github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnr
 github.com/json-iterator/go v1.1.12/go.mod h1:e30LSqwooZae/UwlEbR2852Gd8hjQvJoHmT4TnhNGBo=
 github.com/k8s-manifest-kit/engine v0.2.1-0.20261101103640-15b55c08d3f5 h1:RF3J/WItKvmUEclMDz1T4m0qwFGKeQWsf/duMVgt26g=
 github.com/k8s-manifest-kit/engine v0.2.1-0.20261101103640-15b55c08d3f5/go.mod h1:bPAVsmTZuKQWl4dNI3fjtg9SW/9tWgduytBC8D8Quto=
-github.com/k8s-manifest-kit/pkg v0.2.1-0.20261031162336-25c87f9aadec h1:Tjj2HotoNu0wUf2X7CRmBr97os+wRbo+XXUWVSy5Qzo=
-github.com/k8s-manifest-kit/pkg v0.2.1-0.20261031162336-25c87f9aadec/go.mod h1:oGCeCiuisbK8CYm3DahxrYJbzi7l8PD4sIK6l3vqzW0=
-github.com/k8s-manifest-kit/renderer-helm v0.4.1-0.20261101104407-4c18dc58b569 h1:pfrne68Xoe6BlfuywObS/R9O8MP/on3mp9vms/FYGls=
-github.com/k8s-manifest-kit/renderer-helm v0.4.1-0.20261101104407-4c18dc58b569/go.mod h1:gds0DzeT5x4M/wIDO6p+F5L1mFV1wYjGDOvhe8vnSEY=
+github.com/k8s-manifest-kit/pkg v0.2.1-0.20261101151634-42c7459835be h1:8SyPAeVFyn/YaDaZ7xqT231t5Ct4WSlWvdufAkwNBqQ=
+github.com/k8s-manifest-kit/pkg v0.2.1-0.20261101151634-42c7459835be/go.mod h1:oGCeCiuisbK8CYm3DahxrYJbzi7l8PD4sIK6l3vqzW0=
+github.com/k8s-manifest-kit/renderer-helm v0.4.1-0.20261101152853-b5f0a8f31d8e h1:sfeGAAc+1zklqY1KgCaiC2OrZLND1cr9LT4bSEnJnv8=
+github.com/k8s-manifest-kit/renderer-helm v0.4.1-0.20261101152853-b5f0a8f31d8e/go.mod h1:FvgJdc4YZ4fLnYTmfDhIAMT1TleYEPAEZDsD02OVygU=
 github.com/k8s-manifest-kit/renderer-yaml v0.1.1-0.20261101105658-5eaf92cd4385 h1:BawpqGym5aD9wgbg1vCD52B1KYhoiY5OyBpA20JMqtw=
 github.com/k8s-manifest-kit/renderer-yaml v0.1.1-0.20261101105658-5eaf92cd4385/go.mod h1:YTEr9LA2RrqeukOlDNSiF/A9QuTV1SB/rDfJMc65b+U=
 github.com/kr/pretty v0.3.1 h1:flRD4NNwYAUpkphVc1HcthR4KEIFJ65n8Mw5qdRn3LE=
