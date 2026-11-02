@@ -8,8 +8,8 @@ require (
 	github.com/k8s-manifest-kit/renderer-helm v0.4.1-0.20261101155450-b3c718aef0fd
 	github.com/k8s-manifest-kit/renderer-yaml v0.1.1-0.20261101155518-2de1f418cbc3
 	github.com/rs/xid v1.6.0
-	k8s.io/api v0.37.1
-	k8s.io/apimachinery v0.37.1
+	k8s.io/api v0.37.2
+	k8s.io/apimachinery v0.37.2
 )
 
 require (
